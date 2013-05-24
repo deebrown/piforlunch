@@ -1,0 +1,61 @@
+# XBMC Configuration
+# ==================
+
+#X1: 0 Y1: 0 X2: 0 Y2: 0  du:0 dd:0 dl:0 dr:0  start:0 back:0  TL:0 TR:0  A: 0 B: 0 X: 0 Y: 0  black: 0 white: 0  LT: 0 RT: 0
+
+[xboxdrv]
+#ui-clear = true
+extra-devices = false
+extra-events = false
+deadzone = 6000
+device-name = "Microsoft Xbox 360 Wireless Controller (PC)"
+
+[autofire]
+LT = 75 # Left trigger
+RT = 75 # Right trigger
+
+[ui-buttonmap]
+# Face buttons
+A = KEY_ENTER
+B = KEY_BACKSPACE
+X = KEY_P
+Y = KEY_ESC
+
+# D-Pad
+du = KEY_UP
+dd = KEY_DOWN
+dl = KEY_LEFT
+dr = KEY_RIGHT
+
+# Start / Back buttons
+start = KEY_SPACE
+back = KEY_TAB
+
+# White / Black buttons
+white = KEY_C
+black = KEY_I
+
+# Stick buttons
+TL = BTN_RIGHT # Left stick buttons
+TR = KEY_C # Right stick buttons
+
+# Triggers
+RT = KEY_EQUAL # Right trigger
+LT = KEY_MINUS # Left trigger
+
+[ui-axismap]
+#x2=REL_RX:10
+#y2=REL_RY:-10
+#y2^dead:6000^invert = rel-repeat:REL_WHEEL:1:50
+
+x1=REL_X:10
+y1=REL_Y:10
+
+# The resp filter moves the neutral position to zero to work around a
+# bug in XBMC, that causes bogus events when neutral position is
+# elsewhere. It loses a bit of precision in the trigger as result, but
+# that isn't noticeable.
+LT^resp:127:255=ABS_Z
+RT^resp:127:255=ABS_RZ
+
+# EOF #
